@@ -1,0 +1,2 @@
+export  const ADD_NEWTYPENAME="ADD_NEWTYPEnAME";
+export  const ADD_NEWTASKNAME="ADD_NEWTASKnANE";

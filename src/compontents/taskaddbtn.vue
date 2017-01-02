@@ -71,7 +71,7 @@
                 this.show = false;
                 this.show2 = false;
                 if(this.newtypename==""){
-                    alert("新分类的名字不能为空")
+                    alert("新分类的名字不能为空！！！")
                 }
                 else {
                     this.$store.dispatch('addtypename',this.newtypename);

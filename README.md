@@ -1,6 +1,6 @@
 # demo
 
-> A Vue.js project
+> a task-system for Vue
 
 ## Build Setup
 

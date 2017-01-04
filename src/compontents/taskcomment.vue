@@ -1,20 +1,14 @@
 <template>
     <div>
-    <mu-card  :style="height">
-        <mu-card-title title="Content Title" subTitle="Content Title"/>
+    <mu-card  :style="height"   v-if="task.content">
+        <mu-card-title :title="task.contitle" :subTitle="task.subtitle"/>
         <mu-card-text>
-            散落在指尖的阳光，我试着轻轻抓住光影的踪迹，它却在眉宇间投下一片淡淡的阴影。
-            散落在指尖的阳光，我试着轻轻抓住光影的踪迹，它却在眉宇间投下一片淡淡的阴影。
-            散落在指尖的阳光，我试着轻轻抓住光影的踪迹，它却在眉宇间投下一片淡淡的阴影。
-            散落在指尖的阳光，我试着轻轻抓住光影的踪迹，它却在眉宇间投下一片淡淡的阴影。
-            散落在指尖的阳光，我试着轻轻抓住光影的踪迹，它却在眉宇间投下一片淡淡的阴影。
-
+          {{task.content}}
         </mu-card-text>
-        <mu-card-actions>
-            <mu-flat-button label="Action 1"/>
-            <mu-flat-button label="Action 2"/>
-        </mu-card-actions>
     </mu-card>
+        <mu-card  :style="height"   v-else>
+            暂无内容
+        </mu-card>
     </div>
 </template>
 
@@ -25,6 +19,20 @@
                 height:{
                     'minHeight':'880px',
                 }
+            }
+        },
+        computed:{
+            listnum(){
+                return this.$store.state.clicknum[0]
+            },
+            tasknum(){
+                return  this.$store.state.clicknum[1]
+            },
+            conntentnum(){
+                return  this.$store.state.tasklistnum[0]
+            },
+            task(){
+                return this.$store.state.datalist[this.listnum].children[this.tasknum].children[this.conntentnum]
             }
         }
     }

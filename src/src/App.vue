@@ -1,7 +1,7 @@
 
 <template>
     <div>
-        <mu-appbar title="任务系统" >
+        <mu-appbar title="任务系统">
             <mu-icon-button icon="menu" slot="left"/>
             <mu-icon-menu icon="more_vert" slot="right">
                 <mu-menu-item title="菜单 1"/>

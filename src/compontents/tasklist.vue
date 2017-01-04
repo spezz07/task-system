@@ -1,44 +1,24 @@
 <template>
 <div>
-    <mu-list>
-        <mu-sub-header inset >2016-12-16</mu-sub-header>
-        <mu-list-item title="Photos" describeText="已完成">
+    <mu-list  v-for="(item,index) in task" >
+        <mu-sub-header inset >{{ item.time }}</mu-sub-header>
+        <mu-list-item describeText="已完成" v-if="item.finish==1" :title="item.titlename" @click="chick_tasklist(index)">
             <mu-avatar icon="assignment" backgroundColor="blue" slot="leftAvatar"/>
-             111111111
+            <br/>
+             {{item.summary}}
+            <br/>
             </mu-list-item>
-        <mu-list-item title="Recipes" describeText="已完成" >
-            <mu-avatar icon="assignment"  backgroundColor="blue"slot="leftAvatar"/>
-              222222222
-            </mu-list-item>
-        <mu-list-item title="Work" describeText="已完成">
-            <mu-avatar icon="assignment"  backgroundColor="blue"slot="leftAvatar"/>
-              33333333333
-            </mu-list-item>
+        <mu-list-item  describeText="没完成" :title="item.titlename" v-else  @click="chick_tasklist(index)" >
+            <mu-avatar icon="assignment" backgroundColor="yellow600" slot="leftAvatar"  />
+            <br/>
+            {{item.summary}}
+            <br/>
+        </mu-list-item>
+        <mu-divider inset/>
     </mu-list>
-    <mu-divider inset/>
-    <mu-list>
-        <mu-sub-header inset>2016-12-15</mu-sub-header>
-        <mu-list-item title="Vacation itinerary" describeText="已完成">
-            <mu-avatar icon="assignment" backgroundColor="blue" slot="leftAvatar" />
-               4444444444444
-        </mu-list-item>
-        <mu-list-item title="Kitchen remodel" describeText="未完成">
-            <mu-avatar icon="assignment" backgroundColor="yellow600" slot="leftAvatar" />
-        5555555555555
-        </mu-list-item>
-    </mu-list>
-    <mu-divider inset/>
-    <mu-list>
-        <mu-sub-header inset>2016-12-15</mu-sub-header>
-        <mu-list-item title="Vacation itinerary" describeText="已完成">
-            <mu-avatar icon="assignment" backgroundColor="blue" slot="leftAvatar" />
-            4444444444444
-        </mu-list-item>
-        <mu-list-item title="Kitchen remodel" describeText="未完成">
-            <mu-avatar icon="assignment" backgroundColor="yellow600" slot="leftAvatar" />
-            5555555555555
-        </mu-list-item>
-    </mu-list>
+
+
+
 
 </div>
 </template>
@@ -46,9 +26,24 @@
     export default{
         data(){
             return{
-              titleclass:{
-                  fontSize:"28px"
-              }
+             tasklist_index:""
+            }
+        },
+        methods:{
+          chick_tasklist(index){
+              this.tasklist_index=index;
+              this.$store.dispatch("tasklist_now",this.tasklist_index)
+          }
+        },
+        computed:{
+            listnum(){
+                return this.$store.state.clicknum[0]
+            },
+            tasknum(){
+                return  this.$store.state.clicknum[1]
+            },
+            task(){
+                return this.$store.state.datalist[this.listnum].children[this.tasknum].children
             }
         }
     }

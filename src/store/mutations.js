@@ -14,14 +14,20 @@ export default{
              state.datalist[newtask.taskindexnum].children.push(ob);
              if(state.datalist[newtask.taskindexnum].children.length==0){
                  state.datalist[newtask.taskindexnum].children[0].children=[];
-                 let newob={};
+                 let newob={
+                     contitle:"",
+                     summary:"",
+                     time:"",
+                     content:"",
+                     finish:""
+                 };
                  state.datalist[newtask.taskindexnum].children[0].children.push(newob)
              }
              else{
                  state.datalist[newtask.taskindexnum].children[state.datalist[newtask.taskindexnum].children.length-1].children=[];
                  let newob={
                      contitle:"",
-                     titlename:"",
+                     summary:"",
                      time:"",
                      content:"",
                      finish:""
@@ -46,5 +52,6 @@ export default{
           taskstate.Taskedit_index.contitle=taskstate.Taskedit_title;
           taskstate.Taskedit_index.time=taskstate.Taskedit_time;
           taskstate.Taskedit_index.content=taskstate.Taskedit_content;
+          taskstate.Taskedit_index.summary=taskstate.Taskedit_summary
     }
 }

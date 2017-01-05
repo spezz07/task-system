@@ -17,6 +17,7 @@
              <mu-dialog :open="dialog2" title="编辑任务" >
                  <mu-text-field label="请输入标题（最多15个字）" labelFloat :maxLength="15" :errorText="errortext" @textOverflow="titleover" v-model="taskedit_title"/><br/>
                  <!--设置 maxLength 属性，启动输入字符数记录，再输入时会触发 textOverflow 事件，当一个参数为 true 是则说明输入的长度已超过最大长度-->
+                 <mu-text-field label="请输入摘要（最多15个字）" labelFloat :maxLength="15" :errorText="errorsummary" @textOverflow="summaryover" v-model="taskedit_summary"/><br/>
                  选择的日期：
                  <mu-date-picker container="inline" mode="landscape" hintText="请选择日期" v-model="taskedit_time"/><br/>
                  <mu-text-field label="请输入内容（最多100个字）" labelFloat  :maxLength="100" :errorText="errorcontent" @textOverflow="contentover" multiLine :rows="3" :rowsMax="10" v-model="taskedit_content"/><br/>
@@ -24,14 +25,25 @@
                  <mu-flat-button slot="actions" primary @click="taskedit" label="确定"/>
              </mu-dialog>
          </div>
-
         <mu-divider inset/>
         <mu-card-text>
           {{task.content}}
         </mu-card-text>
     </mu-card>
-        <mu-card  :style="height"   v-else>
-
+        <mu-card  :style="height"   v-else-if="task.content==''">
+            <mu-raised-button label="新增任务" class="demo-raised-button right-edit"   @click="taskedit_open" primary >
+                <mu-icon value="mode_edit" />
+            </mu-raised-button>
+            <mu-dialog :open="dialog2" title="新增任务" >
+                <mu-text-field label="请输入标题（最多15个字）" labelFloat :maxLength="15" :errorText="errortext" @textOverflow="titleover" v-model="taskedit_title"/><br/>
+                <!--设置 maxLength 属性，启动输入字符数记录，再输入时会触发 textOverflow 事件，当一个参数为 true 是则说明输入的长度已超过最大长度-->
+                <mu-text-field label="请输入摘要（最多15个字）" labelFloat :maxLength="15" :errorText="errorsummary" @textOverflow="summaryover" v-model="taskedit_summary"/><br/>
+                选择的日期：
+                <mu-date-picker container="inline" mode="landscape" hintText="请选择日期" v-model="taskedit_time"/><br/>
+                <mu-text-field label="请输入内容（最多100个字）" labelFloat  :maxLength="100" :errorText="errorcontent" @textOverflow="contentover" multiLine :rows="3" :rowsMax="10" v-model="taskedit_content"/><br/>
+                <mu-flat-button slot="actions"   @click="btnclose" primary label="取消"/>
+                <mu-flat-button slot="actions" primary @click="taskedit" label="确定"/>
+            </mu-dialog>
         </mu-card>
     </div>
 </template>
@@ -47,9 +59,12 @@
                 dialog2: false,
                 errortext:"",
                 errorcontent:"",
+                errorsummary:"",
                 taskedit_title:"",
                 taskedit_time:"",
-                taskedit_content:""
+                taskedit_content:"",
+                taskedit_summary:""
+
             }
         },
         computed:{
@@ -84,8 +99,12 @@
             },
             taskedit(){
                 this.dialog2 = false;
-                if(this.taskedit_title==""||this.taskedit_time==""||this.taskedit_content==""){
-                    alert("数据不能为空")
+                if(this.taskedit_title==""||this.taskedit_time==""||this.taskedit_content==""||this.askedit_summary==""){
+                    alert("数据不能为空");
+                    this.taskedit_title="";
+                    this.taskedit_time="";
+                    this.taskedit_content="";
+                    this.taskedit_summary=""
                 }
                 else{
                     this.$store.dispatch({
@@ -93,21 +112,26 @@
                         Taskedit_title:this.taskedit_title,
                         Taskedit_time:this.taskedit_time,
                         Taskedit_content:this.taskedit_content,
+                        Taskedit_summary:this.taskedit_summary,
                         Taskedit_index:this.task
                     });
                     this.taskedit_title="";
                     this.taskedit_time="";
-                    this.taskedit_content=""
+                    this.taskedit_content="";
+                    this.taskedit_summary=""
                 }
 
 
             },
             titleover (overflow) {
-                this.errortext = overflow? '超过15个字了！' : ''
+                this.errortext = overflow? '标题超过15个字了！' : ''
             },
            contentover(overflow){
-               this.errorcontent = overflow? '超过100个字了！' : ''
-           }
+               this.errorcontent = overflow? '内容超过100个字了！' : ''
+           },
+            summaryover(overflow) {
+               this.errorsummary = overflow ? "摘要超过15个字了！":" "
+            }
         }
     }
 

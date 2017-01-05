@@ -14,21 +14,21 @@ const  state = {
                          title:"11111",
                          children:[
                              {
-                                 titlename:"photo",
+                                 summary:"photo",
                                  finish:0,
                                  time:"2016-12-16",
                                  contitle:"我是标题1",
                                  content:"散落在指尖的阳光，我试着轻轻抓住光影的踪迹，它却在眉宇间投下一片淡淡的阴影。"
                              },
                              {
-                                 titlename:"photo2",
+                                 summary:"photo2",
                                  finish:0,
                                  time:"2016-12-15",
                                  contitle:"我是标题4",
                                  content:"散落在指尖的阳光，我试着轻轻抓住光影的踪迹，它却在眉宇间投下一片淡淡的阴影。"
                              },
                              {
-                                 titlename:"photo3",
+                                 summary:"photo3",
                                  finish:1,
                                  time:"2016-12-13",
                                  contitle:"我是标题6",
@@ -40,21 +40,21 @@ const  state = {
                          title:"88888",
                          children:[
                              {
-                                 titlename:"photo4",
+                                 summary:"photo4",
                                  finish:1,
                                  time:"2016-12-16",
                                  contitle:"我是标题1",
                                  content:"散落在指尖的阳光，我试着轻轻抓住光影的踪迹，它却在眉宇间投下一片淡淡的阴影。"
                              },
                              {
-                                 titlename:"photo5",
+                                 summary:"photo5",
                                  finish:0,
                                  time:"2016-12-15",
                                  contitle:"我是标题1",
                                  content:"散落在指尖的阳光，我试着轻轻抓住光影的踪迹，它却在眉宇间投下一片淡淡的阴影。"
                              },
                              {
-                                 titlename:"photo6",
+                                 summary:"photo6",
                                  finish:1,
                                  time:"2016-12-13",
                                  contitle:"我是标题1",
@@ -72,21 +72,21 @@ const  state = {
                          title:"22222",
                          children:[
                              {
-                                 titlename:"phot7o",
+                                 summary:"phot7o",
                                  finish:1,
                                  time:"2016-12-16",
                                  contitle:"我是标题1",
                                  content:"散落在指尖的阳光，我试着轻轻抓住光影的踪迹，它却在眉宇间投下一片淡淡的阴影。"
                              },
                              {
-                                 titlename:"phot32",
+                                 summary:"phot32",
                                  finish:0,
                                  time:"2016-12-15",
                                  contitle:"我是标题1",
                                  content:"散落在指尖的阳光，我试着轻轻抓住光影的踪迹，它却在眉宇间投下一片淡淡的阴影。"
                              },
                              {
-                                 titlename:"photo9",
+                                 summary:"photo9",
                                  finish:1,
                                  time:"2016-12-13",
                                  contitle:"我是标题1",
@@ -98,21 +98,21 @@ const  state = {
                          title:"33333",
                          children:[
                              {
-                                 titlename:"photo10",
+                                 summary:"photo10",
                                  finish:1,
                                  time:"2016-12-16",
                                  contitle:"我是标题1",
                                  content:"散落在指尖的阳光，我试着轻轻抓住光影的踪迹，它却在眉宇间投下一片淡淡的阴影。"
                              },
                              {
-                                 titlename:"photo20",
+                                 summary:"photo20",
                                  finish:0,
                                  time:"2016-12-15",
                                  contitle:"我是标题1",
                                  content:"散落在指尖的阳光，我试着轻轻抓住光影的踪迹，它却在眉宇间投下一片淡淡的阴影。"
                              },
                              {
-                                 titlename:"photo30",
+                                 summary:"photo30",
                                  finish:1,
                                  time:"2016-12-13",
                                  contitle:"我是标题1",
@@ -124,21 +124,21 @@ const  state = {
                          title:"44444",
                          children:[
                              {
-                                 titlename:"photo40",
+                                 summary:"photo40",
                                  finish:1,
                                  time:"2016-12-16",
                                  contitle:"我是标题1",
                                  content:"散落在指尖的阳光，我试着轻轻抓住光影的踪迹，它却在眉宇间投下一片淡淡的阴影。"
                              },
                              {
-                                 titlename:"photo25",
+                                 summary:"photo25",
                                  finish:0,
                                  time:"2016-12-15",
                                  contitle:"我是标题1",
                                  content:"散落在指尖的阳光，我试着轻轻抓住光影的踪迹，它却在眉宇间投下一片淡淡的阴影。"
                              },
                              {
-                                 titlename:"photo34",
+                                 summary:"photo34",
                                  finish:1,
                                  time:"2016-12-13",
                                  contitle:"我是标题1",
@@ -156,21 +156,21 @@ const  state = {
                          title:"5555",
                          children:[
                              {
-                                 titlename:"photo25",
+                                 summary:"photo25",
                                  finish:1,
                                  time:"2016-12-13",
                                  contitle:"我是标题1",
                                  content:"散落在指尖的阳光，我试着轻轻抓住光影的踪迹，它却在眉宇间投下一片淡淡的阴影。"
                              },
                              {
-                                 titlename:"photo286",
+                                 summary:"photo286",
                                  finish:0,
                                  time:"2016-12-13",
                                  contitle:"我是标题1",
                                  content:"散落在指尖的阳光，我试着轻轻抓住光影的踪迹，它却在眉宇间投下一片淡淡的阴影。"
                              },
                              {
-                                 titlename:"photo387",
+                                 summary:"photo387",
                                  finish:1,
                                  time:"2016-12-13",
                                  contitle:"我是标题1",
@@ -182,21 +182,21 @@ const  state = {
                          title:"66666",
                          children:[
                              {
-                                 titlename:"photo88",
+                                 summary:"photo88",
                                  finish:1,
                                  time:"2016-12-13",
                                  contitle:"我是标题1",
                                  content:"散落在指尖的阳光，我试着轻轻抓住光影的踪迹，它却在眉宇间投下一片淡淡的阴影。"
                              },
                              {
-                                 titlename:"photo299",
+                                 summary:"photo299",
                                  finish:0,
                                  time:"2016-12-13",
                                  contitle:"我是标题1",
                                  content:"散落在指尖的阳光，我试着轻轻抓住光影的踪迹，它却在眉宇间投下一片淡淡的阴影。"
                              },
                              {
-                                 titlename:"photo3546",
+                                 summary:"photo3546",
                                  finish:1,
                                  time:"2016-12-13",
                                  contitle:"我是标题1",
@@ -208,21 +208,21 @@ const  state = {
                          title:"77777",
                          children:[
                              {
-                                 titlename:"photo88",
+                                 summary:"photo88",
                                  finish:1,
                                  time:"2016-12-13",
                                  contitle:"我是标题1",
                                  content:"散落在指尖的阳光，我试着轻轻抓住光影的踪迹，它却在眉宇间投下一片淡淡的阴影。"
                              },
                              {
-                                 titlename:"photo777",
+                                 summary:"photo777",
                                  finish:0,
                                  time:"2016-12-13",
                                  contitle:"我是标题1",
                                  content:"散落在指尖的阳光，我试着轻轻抓住光影的踪迹，它却在眉宇间投下一片淡淡的阴影。"
                              },
                              {
-                                 titlename:"photo999",
+                                 summary:"photo999",
                                  finish:1,
                                  time:"2016-12-13",
                                  contitle:"我是标题1",

@@ -2,16 +2,16 @@
 <div>
     <mu-list  v-for="(item,index) in task" >
         <mu-sub-header inset >{{ item.time }}</mu-sub-header>
-        <mu-list-item describeText="已完成" v-if="item.finish==1" :title="item.titlename" @click="chick_tasklist(index)">
+        <mu-list-item describeText="已完成" v-if="item.finish==1" :title="item.contitle" @click="chick_tasklist(index)">
             <mu-avatar icon="assignment" backgroundColor="blue" slot="leftAvatar"/>
             <br/>
-             {{item.contitle}}
+             {{item.summary}}
             <br/>
             </mu-list-item>
-        <mu-list-item  describeText="没完成" :title="item.titlename" v-else-if="item.finish==0"  @click="chick_tasklist(index)" >
+        <mu-list-item  describeText="没完成" :title="item.contitle" v-else-if="item.finish==0"  @click="chick_tasklist(index)" >
             <mu-avatar icon="assignment" backgroundColor="yellow600" slot="leftAvatar"  />
             <br/>
-            {{item.contitle}}
+            {{item.summary}}
             <br/>
         </mu-list-item>
         <mu-divider inset/>

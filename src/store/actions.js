@@ -15,4 +15,10 @@ export default {
     tasklist_now({commit},num){
         commit(types.TASKLISTNUM,num)
     },
+    taskfinsh({commit},taskstate){
+        commit(types.TASKFINISH,taskstate)
+    },
+    taskedit({commit},taskstate){
+        commit(types.TASKEDIT,taskstate)
+    },
 }

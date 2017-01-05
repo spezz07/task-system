@@ -1,4 +1,6 @@
 export  const ADD_NEWTYPENAME="ADD_NEWTYPENAME";
 export  const ADD_NEWTASKNAME="ADD_NEWTASKNANE";
 export const  TASKNUM="TASKNUM";
-export const  TASKLISTNUM="TASKLISTNUM"
+export const  TASKLISTNUM="TASKLISTNUM";
+export const  TASKFINISH="TASKFINISH";
+export const  TASKEDIT="TASKEDIT";

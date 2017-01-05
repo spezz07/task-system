@@ -5,13 +5,13 @@
         <mu-list-item describeText="已完成" v-if="item.finish==1" :title="item.titlename" @click="chick_tasklist(index)">
             <mu-avatar icon="assignment" backgroundColor="blue" slot="leftAvatar"/>
             <br/>
-             {{item.summary}}
+             {{item.contitle}}
             <br/>
             </mu-list-item>
-        <mu-list-item  describeText="没完成" :title="item.titlename" v-else  @click="chick_tasklist(index)" >
+        <mu-list-item  describeText="没完成" :title="item.titlename" v-else-if="item.finish==0"  @click="chick_tasklist(index)" >
             <mu-avatar icon="assignment" backgroundColor="yellow600" slot="leftAvatar"  />
             <br/>
-            {{item.summary}}
+            {{item.contitle}}
             <br/>
         </mu-list-item>
         <mu-divider inset/>
@@ -32,7 +32,7 @@
         methods:{
           chick_tasklist(index){
               this.tasklist_index=index;
-              this.$store.dispatch("tasklist_now",this.tasklist_index)
+              this.$store.dispatch("tasklist_now",this.tasklist_index)//传出当前点击的index
           }
         },
         computed:{

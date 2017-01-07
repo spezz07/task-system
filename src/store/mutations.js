@@ -1,5 +1,5 @@
-import * as types from './mutation-types'
-
+import * as types from './mutation-types';
+import Vue from "vue";
 
 export default{
     [types.ADD_NEWTYPENAME](state,newtype){
@@ -34,24 +34,45 @@ export default{
                  };
                  state.datalist[newtask.taskindexnum].children[state.datalist[newtask.taskindexnum].children.length-1].children.push(newob)
              }
+            state.tasklistnum[0]=0
     },
     [types.TASKNUM](state,num){
-        //state.clicknum[0] = Object.assign({}, state.clicknum[0], {  listnum: num.listindex, tasknum: num.taskindex })
+        // Object.assign({}, state.clicknum[0], {  listnum: num.listindex, tasknum: num.taskindex })
         state.clicknum=[];
         state.clicknum.push(num.listindex);
-        state.clicknum.push(num.taskindex)
+        state.clicknum.push(num.taskindex);
+        state.eventtarget.event=num.el
     },
     [types.TASKLISTNUM](state,num){
          state.tasklistnum=[];
          state.tasklistnum.push(num)
     },
     [types.TASKFINISH](state,taskstate){
-            taskstate.finish=1;
+            Vue.set(taskstate,"finish",1);
+            //taskstate.finish=1;
     },
     [types.TASKEDIT](state,taskstate){
-          taskstate.Taskedit_index.contitle=taskstate.Taskedit_title;
-          taskstate.Taskedit_index.time=taskstate.Taskedit_time;
-          taskstate.Taskedit_index.content=taskstate.Taskedit_content;
-          taskstate.Taskedit_index.summary=taskstate.Taskedit_summary;
+        let newob={
+                contitle:taskstate.Taskedit_title,
+                time:taskstate.Taskedit_time,
+                content:taskstate.Taskedit_content,
+                summary:taskstate.Taskedit_summary
+            };
+                Object.assign(taskstate.Taskedit_index,newob)
+            //Vue.set(taskstate.Taskedit_index,"contitle",taskstate.Taskedit_title);
+            //Vue.set(taskstate.Taskedit_index,"time",taskstate.Taskedit_time);
+            //Vue.set(taskstate.Taskedit_index,"content",taskstate.Taskedit_content);
+            //Vue.set(taskstate.Taskedit_index,"summary",taskstate.Taskedit_summary);
+
+            // taskstate.Taskedit_index.contitle=taskstate.Taskedit_title;
+            // taskstate.Taskedit_index.time=taskstate.Taskedit_time;
+            //taskstate.Taskedit_index.content=taskstate.Taskedit_content;
+            // taskstate.Taskedit_index.summary=taskstate.Taskedit_summary
+    },
+    [types.TASKEVEVT](state,events){//新增分类和编辑时候，模拟点击此时任务树，从而触发视图更新
+        events.click()
+    },
+    [types.LISTDEL](state,listnum){
+        state.datalist.splice(listnum,1)
     }
 }

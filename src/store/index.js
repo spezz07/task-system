@@ -15,7 +15,7 @@ const  state = {
                          children:[
                              {
                                  summary:"photo",
-                                 finish:0,
+                                 finish:1,
                                  time:"2016-12-16",
                                  contitle:"我是标题1",
                                  content:"散落在指尖的阳光，我试着轻轻抓住光影的踪迹，它却在眉宇间投下一片淡淡的阴影。"
@@ -29,7 +29,7 @@ const  state = {
                              },
                              {
                                  summary:"photo3",
-                                 finish:1,
+                                 finish:0,
                                  time:"2016-12-13",
                                  contitle:"我是标题6",
                                  content:"散落在指尖的阳光，我试着轻轻抓住光影的踪迹，它却在眉宇间投下一片淡淡的阴影。"
@@ -41,7 +41,7 @@ const  state = {
                          children:[
                              {
                                  summary:"photo4",
-                                 finish:1,
+                                 finish:0,
                                  time:"2016-12-16",
                                  contitle:"我是标题1",
                                  content:"散落在指尖的阳光，我试着轻轻抓住光影的踪迹，它却在眉宇间投下一片淡淡的阴影。"
@@ -234,7 +234,10 @@ const  state = {
              },
          ],
          clicknum:[0,0],
-         tasklistnum:[0]
+         tasklistnum:[0],
+         eventtarget:{
+             event:""
+         }
 
 }
 

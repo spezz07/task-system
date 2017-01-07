@@ -4,3 +4,5 @@ export const  TASKNUM="TASKNUM";
 export const  TASKLISTNUM="TASKLISTNUM";
 export const  TASKFINISH="TASKFINISH";
 export const  TASKEDIT="TASKEDIT";
+export const  TASKEVEVT="TASKEVENT";
+export const  LISTDEL="LISTDEL"

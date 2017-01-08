@@ -14,7 +14,7 @@
             </mu-list-item>
             <mu-list-item  toggleNested   v-for="(i,index) in task"   :open="false"   @click="handleHover"   ><!--标题-->
                 <mu-icon slot="left"  value="class" color="blue"/><!--标题图标-->
-                    <mu-icon value="delete_forever"  color="red600"  :class="[ show ? btnshow2:btnshow ] " class="delbtn"    @click="dialogopen(index)"/>
+                    <mu-icon value="delete_forever"  color="red600"   class="delbtn"    @click="dialogopen(index)"/>
                 {{i.title }}
                 <tree :model="i" slot="nested" :modelnum="index"></tree>
             </mu-list-item>
@@ -49,7 +49,7 @@
              }
          },
          dialogopen(index){
-             this.dialog = true
+             this.dialog = true;
              this.listindex=index;
          },
          dialogclose(){

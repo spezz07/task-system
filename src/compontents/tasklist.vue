@@ -8,7 +8,8 @@
         </div>
         <br><br>
         <mu-divider inset/>
-        <mu-list  v-for="(item,index) in task" >
+
+        <mu-list  v-for="(item,index) in task"  >
             <mu-list-item :describeText="item.time" v-if="item.finish==1" :title="item.contitle" @click="chick_tasklist(index)" :class="{active: itemfinish}" >
                       <mu-avatar icon="assignment" backgroundColor="blue" slot="leftAvatar"/>
                   <br/>
@@ -41,7 +42,7 @@
                 itemcontent:false,
                 fincolor:"",
                 unfincolor:"",
-                contentcolor:""
+                contentcolor:"blue"
             }
         },
         methods:{
@@ -85,8 +86,10 @@
                 return  this.$store.state.clicknum[1]
             },
             task(){
-                return this.$store.state.datalist[this.listnum].children[this.tasknum].children
+                    return this.$store.state.datalist[this.$store.state.clicknum[0]].children[this.$store.state.clicknum[1]].children
+
             },
+
 
         }
     }

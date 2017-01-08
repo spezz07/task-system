@@ -210,23 +210,23 @@ const  state = {
                              {
                                  summary:"photo88",
                                  finish:1,
-                                 time:"2016-12-13",
-                                 contitle:"我是标题1",
-                                 content:"散落在指尖的阳光，我试着轻轻抓住光影的踪迹，它却在眉宇间投下一片淡淡的阴影。"
+                                 time:"2016-12-12",
+                                 contitle:"我是标题8",
+                                 content:"散落在指尖的阳光，我试着轻轻抓住光影的踪迹，。"
                              },
                              {
                                  summary:"photo777",
-                                 finish:0,
-                                 time:"2016-12-13",
-                                 contitle:"我是标题1",
-                                 content:"散落在指尖的阳光，我试着轻轻抓住光影的踪迹，它却在眉宇间投下一片淡淡的阴影。"
+                                 finish:1,
+                                 time:"2016-12-14",
+                                 contitle:"我是标题9",
+                                 content:"散落在指尖的阳光，。"
                              },
                              {
                                  summary:"photo999",
                                  finish:1,
-                                 time:"2016-12-13",
-                                 contitle:"我是标题1",
-                                 content:"散落在指尖的阳光，我试着轻轻抓住光影的踪迹，它却在眉宇间投下一片淡淡的阴影。"
+                                 time:"2016-12-10",
+                                 contitle:"我是标题10",
+                                 content:"22222222。"
                              }
                          ],
                      },

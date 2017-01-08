@@ -52,13 +52,14 @@ export default{
             //taskstate.finish=1;
     },
     [types.TASKEDIT](state,taskstate){
-        let newob={
-                contitle:taskstate.Taskedit_title,
-                time:taskstate.Taskedit_time,
-                content:taskstate.Taskedit_content,
-                summary:taskstate.Taskedit_summary
-            };
-                Object.assign(taskstate.Taskedit_index,newob)
+        let newob = {
+            contitle:taskstate.Taskedit_title,
+            time:taskstate.Taskedit_time,
+            content:taskstate.Taskedit_content,
+            summary:taskstate.Taskedit_summary,
+            finish:0
+        };
+            Object.assign(taskstate.Taskedit_index,newob);
             //Vue.set(taskstate.Taskedit_index,"contitle",taskstate.Taskedit_title);
             //Vue.set(taskstate.Taskedit_index,"time",taskstate.Taskedit_time);
             //Vue.set(taskstate.Taskedit_index,"content",taskstate.Taskedit_content);
@@ -70,9 +71,48 @@ export default{
             // taskstate.Taskedit_index.summary=taskstate.Taskedit_summary
     },
     [types.TASKEVEVT](state,events){//新增分类和编辑时候，模拟点击此时任务树，从而触发视图更新
-        events.click()
+        if(events){
+            events.click()
+        }
+
     },
     [types.LISTDEL](state,listnum){
         state.datalist.splice(listnum,1)
+    },
+    [types.CONTENTDEL](state){
+        let listnum=state.clicknum[0];
+        let tasknum=state.clicknum[1];
+        let conntentnum=state.tasklistnum[0];
+        if(state.datalist[listnum].children[tasknum].children.length==1){
+            let newob={
+                contitle:"",
+                summary:"",
+                time:"",
+                content:"",
+                finish:""
+            };
+            Object.assign(state.datalist[listnum].children[tasknum].children[0],newob);
+            let conntentnum_now=state.tasklistnum[0];
+            if(state.tasklistnum[0]!==0){
+                state.tasklistnum[0]=0
+
+            }
+
+        }
+        else {
+            state.datalist[listnum].children[tasknum].children.splice(conntentnum,1);
+            if(state.tasklistnum[0]!==0){
+                state.tasklistnum[0]=0;
+
+            }
+
+
+        }
+    },
+    [types.TASKTREE](state){
+
+            state.datalist[state.clicknum[0]].children.splice(state.clicknum[1],1)
+
+
     }
 }

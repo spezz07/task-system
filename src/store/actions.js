@@ -27,4 +27,10 @@ export default {
     listdel({commit},listnum){//删除分类
         commit(types.LISTDEL,listnum)
     },
+    TaskConDel({commit}){//删除分类
+        commit(types.CONTENTDEL)
+    },
+    DelTree({commit}){//删除分类
+        commit(types.TASKTREE)
+    }
 }
